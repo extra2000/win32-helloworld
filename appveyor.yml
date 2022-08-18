@@ -1,0 +1,14 @@
+os: Visual Studio 2022
+platform:
+  - x64
+build_script:
+  - mkdir build
+  - cd %APPVEYOR_BUILD_FOLDER%\build
+  - cmake -DCMAKE_BUILD_TYPE=Debug ..
+  - cmake --build .
+  - cd %APPVEYOR_BUILD_FOLDER%
+on_success:
+  - choco install nodejs-lts
+  - npm i -D semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/npm @semantic-release/github @semantic-release/git @semantic-release/exec @commitlint/cli @commitlint/config-conventional
+  - npx semantic-release
+test: off
