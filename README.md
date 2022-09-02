@@ -6,6 +6,7 @@
 
 Simple Win32 C++ HelloWorld application with CMake.
 
+![screenshot](./docs/screenshot.png)
 
 ## Building
 
