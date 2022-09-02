@@ -31,3 +31,32 @@ Run:
 ```
 .\Debug\helloworld.exe
 ```
+
+
+## Building on Linux
+
+Install [Bottles](https://flathub.org/apps/details/com.usebottles.bottles) and then create a Wine instance. This is required for running `helloworld.exe` later.
+
+Build Wine Podman image:
+```
+podman build -t extra2000/win32-helloworld/mingw .
+```
+
+Create build directory:
+```
+mkdir -pv build
+```
+
+For SELinux platform, allow this project directory to be mounted into Podman container:
+```
+chcon -R -v -t container_file_t .
+```
+
+Build project:
+```
+podman run -it --rm -v ./:/opt/project:ro -v ./build:/opt/build:rw --workdir /opt/build extra2000/win32-helloworld/mingw bash
+mingw64-cmake -DCMAKE_BUILD_TYPE=Debug ../project
+make
+```
+
+To test the build application, open the `build/helloworld.exe` using [Bottles](https://flathub.org/apps/details/com.usebottles.bottles).
