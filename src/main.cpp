@@ -1,6 +1,6 @@
 #ifndef UNICODE
 #define UNICODE
-#endif 
+#endif
 
 #include <windows.h>
 
@@ -11,7 +11,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
 
     // Register the window class.
     const wchar_t CLASS_NAME[] = L"Hello World!";
-    
+
     WNDCLASS wc = { };
 
     wc.lpfnWndProc = WindowProc;
@@ -31,7 +31,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
         // Size and position
         CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
 
-        NULL,  // Parent window    
+        NULL,  // Parent window
         NULL,  // Menu
         hInstance, // Instance handle
         NULL  // Additional application data
