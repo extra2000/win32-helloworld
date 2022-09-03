@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/extra2000/win32-helloworld/compare/v1.1.0...v1.1.1) (2022-09-03)
+
+
+### Code Refactoring
+
+* **build:** using `wWinMain` with `-municode` for MinGW ([93b8eb7](https://github.com/extra2000/win32-helloworld/commit/93b8eb7ec41c2974ef4b5c1ddef2cf67b077ce4c))
+
 ## [1.1.0](https://github.com/extra2000/win32-helloworld/compare/v1.0.0...v1.1.0) (2022-09-02)
 
 
